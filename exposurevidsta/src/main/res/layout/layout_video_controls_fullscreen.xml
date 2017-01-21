@@ -1,0 +1,91 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clickable="true"
+    android:paddingBottom="@dimen/margin_half"
+    android:paddingTop="@dimen/margin">
+
+    <ImageButton
+        android:id="@+id/imageButtonPrevious"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:background="?selectableItemBackground"
+        android:paddingLeft="@dimen/button_size"
+        android:paddingRight="@dimen/button_size"
+        android:src="@drawable/video_previous"
+        tools:ignore="ContentDescription"
+        android:layout_toStartOf="@+id/imageButtonPlayPauseRetry"
+        android:layout_marginRight="48dp"
+        android:layout_centerVertical="true" />
+
+    <ImageButton
+        android:id="@+id/imageButtonPlayPauseRetry"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:background="?selectableItemBackground"
+        tools:ignore="ContentDescription"
+        android:src="@drawable/video_pause"
+        android:layout_centerInParent="true" />
+
+    <ImageButton
+        tools:ignore="ContentDescription"
+        android:id="@+id/imageButtonNext"
+        android:layout_width="@dimen/button_size"
+        android:layout_height="@dimen/button_size"
+        android:background="?selectableItemBackground"
+        android:paddingLeft="@dimen/button_size"
+        android:paddingRight="@dimen/button_size"
+        android:src="@drawable/video_next"
+        android:layout_toEndOf="@+id/imageButtonPlayPauseRetry"
+        android:layout_marginLeft="48dp"
+        android:layout_centerVertical="true" />
+
+    <RelativeLayout
+        android:id="@+id/seekBarLayoutHolder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true">
+
+        <TextView
+            android:id="@+id/textViewPosition"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_size_small"
+            tools:ignore="UnusedAttribute"
+            tools:text="00:00"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="8dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentLeft="true" />
+
+        <TextView
+            android:id="@+id/textViewDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif"
+            android:textColor="@color/colorPrimaryText"
+            android:textSize="@dimen/text_size_small"
+            tools:ignore="UnusedAttribute"
+            tools:text="-05:00"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="8dp"
+            android:layout_centerInParent="true"
+            android:layout_alignParentRight="true" />
+
+        <SeekBar
+            android:id="@+id/seekBarDuration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="1dp"
+            android:layout_marginRight="1dp"
+            android:layout_toStartOf="@+id/textViewDuration"
+            android:layout_toEndOf="@+id/textViewPosition"
+            android:layout_toRightOf="@+id/textViewPosition"
+            android:layout_toLeftOf="@+id/textViewDuration"
+            android:layout_centerInParent="true" />
+    </RelativeLayout>
+
+</RelativeLayout>

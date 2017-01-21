@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <nz.co.delacour.exposurevidsta.VidstaThumbnailView
+        android:id="@+id/etv"
+        android:layout_width="match_parent"
+        app:allowCache="true"
+        android:layout_height="wrap_content" />
+    
+    <nz.co.delacour.exposurevidsta.Vidsta
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:videoSource="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4"
+        app:setFullScreen="true"
+        app:textColor="@color/colorPrimaryText"
+        app:autoLoop="true"
+        app:autoPlay="true"
+        app:buttonTintColor="@color/colorAccent"
+        app:fullScreenButtonEnabled="true"
+        app:hideControlsOnPlay="true"
+        app:nextVideoDrawable="@drawable/video_next"
+        app:pauseVideoDrawable="@drawable/video_pause"
+        app:playVideoDrawable="@drawable/video_play"
+        app:previousVideoDrawable="@drawable/video_previous"
+        app:retryVideoDrawable="@drawable/video_retry" />
+
+
+</RelativeLayout>

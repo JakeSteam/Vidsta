@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/seekBarLayoutHolder"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true">
+
+    <TextView
+        android:id="@+id/textViewPosition"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="8dp"
+        android:fontFamily="sans-serif"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_small"
+        tools:ignore="UnusedAttribute"
+        tools:text="00:00" />
+
+    <SeekBar
+        android:id="@+id/seekBarDuration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_toEndOf="@+id/textViewPosition"
+        android:layout_toLeftOf="@+id/textViewDuration"
+        android:layout_toRightOf="@+id/textViewPosition"
+        android:layout_toStartOf="@+id/textViewDuration" />
+
+    <TextView
+        android:id="@+id/textViewDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="8dp"
+        android:layout_toStartOf="@+id/imageButtonFullScreenToggle"
+        android:fontFamily="sans-serif"
+        android:textColor="#FFFFFF"
+        android:textSize="@dimen/text_size_small"
+        tools:ignore="UnusedAttribute"
+        tools:text="-05:00" />
+
+    <ImageButton xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/imageButtonFullScreenToggle"
+        android:layout_width="@dimen/button_size_small"
+        android:layout_height="@dimen/button_size_small"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="6dp"
+        android:background="?selectableItemBackground"
+        android:src="@drawable/video_screen_fullscreen_enter"
+        tools:ignore="ContentDescription" />
+</RelativeLayout>
