@@ -54,7 +54,7 @@
 ### Firstly Add this to your layout
 
 ```XML
-<nz.co.delacour.exposurevidsta.Vidsta
+<jakelee.exposurevidsta.Vidsta
     android:id="@+id/evp"
     android:layout_width="match_parent"
     android:layout_height="match_parent" />
@@ -65,7 +65,7 @@
 #####-Color tint of play and pause button set to white. (Default)
 
 ###Then... You should be able to work it out from here. 
-####Wiki is still begin developed so if you have any issues please feel free to email me on chris@delacour.co.nz.
+####Wiki is still begin developed so if you have any issues please feel free to email me on chris@delacour.co.uk.
 
 ```Java
  public class MainActivity extends AppCompatActivity implements VideoListeners {
@@ -92,7 +92,7 @@
 
 #Thumbnail View Setup
 ```XML
-    <nz.co.delacour.exposurevidsta.VidstaThumbnailView
+    <jakelee.exposurevidsta.VidstaThumbnailView
         android:id="@+id/etv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

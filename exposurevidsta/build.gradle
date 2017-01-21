@@ -33,8 +33,8 @@ dependencies {
 apply plugin: 'com.novoda.bintray-release'
 
 publish {
-    userOrg= 'delacour'
-    groupId = 'nz.co.delacour.exposure'
+    userOrg= 'jakelee'
+    groupId = 'uk.co.jakelee.exposure'
     artifactId = 'vidsta'
     publishVersion = '1.0.6'
     desc = 'A complete all-in-one video player for Android.'

@@ -1,4 +1,4 @@
-package nz.co.delacour.exposurevidsta;
+package uk.co.jakelee.vidsta;
 
 import org.junit.Test;
 

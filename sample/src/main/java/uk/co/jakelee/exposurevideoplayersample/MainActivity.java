@@ -1,12 +1,12 @@
-package nz.co.delacour.exposurevideoplayersample;
+package uk.co.jakelee.exposurevideoplayersample;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import nz.co.delacour.exposurevidsta.OnThumbnailClickListener;
-import nz.co.delacour.exposurevidsta.Vidsta;
-import nz.co.delacour.exposurevidsta.VidstaThumbnailView;
+import uk.co.jakelee.vidsta.OnThumbnailClickListener;
+import uk.co.jakelee.vidsta.Vidsta;
+import uk.co.jakelee.vidsta.VidstaThumbnailView;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         etv.setVideoSource(videoSource);
         etv.setAutoPlay(true);
         etv.setFullScreen(true);
-        etv.setAllowCache(true); test
+        etv.setAllowCache(true);
         //etv.center();
 
         etv.setOnThumbnailClickListener(new OnThumbnailClickListener() {

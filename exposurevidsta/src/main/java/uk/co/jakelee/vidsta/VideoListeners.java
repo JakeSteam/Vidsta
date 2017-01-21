@@ -1,4 +1,4 @@
-package nz.co.delacour.exposurevidsta;
+package uk.co.jakelee.vidsta;
 
 /**
  * Created by Chris on 13-Sep-16.

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="nz.co.delacour.exposurevidsta">
+    package="uk.co.jakelee.vidsta">
 
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application>
         <activity
-            android:name="nz.co.delacour.exposurevidsta.VidstaStandalonePlayer"
+            android:name="uk.co.jakelee.vidsta.VidstaStandalonePlayer"
             android:configChanges="orientation|keyboardHidden|screenLayout|screenSize"
             android:theme="@style/AppTheme.NoActionBar"/>
     </application>

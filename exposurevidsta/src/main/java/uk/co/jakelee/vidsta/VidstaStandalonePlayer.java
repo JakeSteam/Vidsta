@@ -1,4 +1,4 @@
-package nz.co.delacour.exposurevidsta;
+package uk.co.jakelee.vidsta;
 
 import android.app.Activity;
 import android.os.Bundle;

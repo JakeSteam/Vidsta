@@ -1,4 +1,4 @@
-package nz.co.delacour.exposurevidsta;
+package uk.co.jakelee.vidsta;
 
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;

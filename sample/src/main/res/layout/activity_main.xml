@@ -4,13 +4,13 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <nz.co.delacour.exposurevidsta.VidstaThumbnailView
+    <uk.co.jakelee.vidsta.VidstaThumbnailView
         android:id="@+id/etv"
         android:layout_width="match_parent"
         app:allowCache="true"
         android:layout_height="wrap_content" />
     
-    <nz.co.delacour.exposurevidsta.Vidsta
+    <uk.co.jakelee.vidsta.Vidsta
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:videoSource="http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4"
