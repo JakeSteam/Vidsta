@@ -1,5 +1,6 @@
 package uk.co.jakelee.exposurevideoplayersample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
@@ -10,30 +11,19 @@ import uk.co.jakelee.vidsta.Vidsta;
 public class PlayerActivity extends AppCompatActivity {
     private Vidsta player;
 
-    private boolean hideNotificationBar = true;
-    private boolean loadRemote = false;
-    private boolean listenersEnabled = true;
-    private boolean autoPlay = true;
-    private boolean autoLoop = true;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_player);
 
+        Intent intent = getIntent();
         player = (Vidsta) findViewById(R.id.player);
+        player.setVideoSource(intent.getBooleanExtra("remote", false) ?
+                "http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" :
+                "android.resource://" + getPackageName() + "/" + R.raw.big_buck_bunny);
+        player.setFullScreen(intent.getBooleanExtra("fullscreen", false));
 
-        if (hideNotificationBar) {
-            player.init(this);
-        }
-
-        if (loadRemote) {
-            player.setVideoSource("http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4");
-        } else {
-            player.setVideoSource("android.resource://" + getPackageName() + "/" + R.raw.big_buck_bunny);
-        }
-
-        if (listenersEnabled) {
+        if (!intent.getBooleanExtra("nologging", false)) {
             Listeners listeners = new Listeners((LinearLayout)findViewById(R.id.listenerMessages));
 
             player.setOnVideoBufferingListener(listeners.bufferingListener);
@@ -47,11 +37,15 @@ public class PlayerActivity extends AppCompatActivity {
             player.setOnFullScreenClickListener(listeners.fullScreenListener);
         }
 
-        if (autoLoop) {
+        if (intent.getBooleanExtra("controls", false)) {
+            // Make a bar of controls
+        }
+
+        if (intent.getBooleanExtra("autoloop", false)) {
             player.setAutoLoop(true);
         }
 
-        if (autoPlay) {
+        if (intent.getBooleanExtra("autoplay", false)) {
             player.setAutoPlay(true);
         }
     }

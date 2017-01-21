@@ -10,19 +10,7 @@
     <uk.co.jakelee.vidsta.Vidsta
         android:id="@+id/player"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:setFullScreen="true"
-        app:textColor="@color/colorPrimaryText"
-        app:autoLoop="true"
-        app:autoPlay="true"
-        app:buttonTintColor="@color/colorAccent"
-        app:fullScreenButtonEnabled="true"
-        app:hideControlsOnPlay="true"
-        app:nextVideoDrawable="@drawable/video_next"
-        app:pauseVideoDrawable="@drawable/video_pause"
-        app:playVideoDrawable="@drawable/video_play"
-        app:previousVideoDrawable="@drawable/video_previous"
-        app:retryVideoDrawable="@drawable/video_retry" />
+        android:layout_height="match_parent" />
 
     <ScrollView
         android:id="@+id/listenerScrollView"

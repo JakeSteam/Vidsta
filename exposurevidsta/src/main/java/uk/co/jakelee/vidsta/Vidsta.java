@@ -34,7 +34,6 @@ import android.widget.ImageButton;
 import android.widget.RelativeLayout;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.rey.material.widget.LinearLayout;
 import com.rey.material.widget.ProgressView;
@@ -46,9 +45,6 @@ import uk.co.jakelee.vidsta.listeners.LayoutStates;
 import uk.co.jakelee.vidsta.listeners.OnBackCalledListener;
 import uk.co.jakelee.vidsta.listeners.VideoStateListeners;
 
-/**
- * Created by Chris on 11-Sep-16.
- */
 public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureListener, MediaPlayer.OnPreparedListener,
         MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnVideoSizeChangedListener, View.OnClickListener,
         SeekBar.OnSeekBarChangeListener, MediaPlayer.OnErrorListener {
@@ -489,7 +485,7 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
             //baseAct.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
             baseAct.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         } else {
-            Toast.makeText(getContext(), "FullScreen will not work properly, as no Activity has been initialized.", Toast.LENGTH_LONG).show();
+            Log.d("Vidsta", "FullScreen may not work properly, as no Activity has been initialized.");
         }
 
         if (isSetFullScreen) {

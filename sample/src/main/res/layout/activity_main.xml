@@ -3,20 +3,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/playerButton"
+    <TextView
+        android:id="@+id/logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Player"
-        android:onClick="launchPlayer"/>
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Vidsta"
+        android:textColor="@color/white"
+        android:textSize="50sp" />
 
     <Button
-        android:id="@+id/thumbnailButton"
+        android:id="@+id/launchPlayer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/playerButton"
-        android:text="Thumbnail Player"
-        android:onClick="launchThumbnail"/>
+        android:onClick="launchPlayer"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Start Player" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/launchPlayer"
+        android:layout_below="@id/logo">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/remote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remote video?" />
+
+            <CheckBox
+                android:id="@+id/autoplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Autoplay?" />
+
+            <CheckBox
+                android:id="@+id/autoloop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Autoloop?" />
+
+            <CheckBox
+                android:id="@+id/fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fullscreen?" />
+
+            <CheckBox
+                android:id="@+id/controls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom controls?" />
+
+            <CheckBox
+                android:id="@+id/noLogging"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disable logging?" />
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </RelativeLayout>
