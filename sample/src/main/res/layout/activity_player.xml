@@ -10,7 +10,8 @@
     <uk.co.jakelee.vidsta.Vidsta
         android:id="@+id/player"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        app:fullScreenButtonEnabled="true" />
 
     <ScrollView
         android:id="@+id/listenerScrollView"

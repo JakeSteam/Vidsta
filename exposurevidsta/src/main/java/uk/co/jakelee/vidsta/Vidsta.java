@@ -157,11 +157,10 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
             pauseVideoDrawable = ContextCompat.getDrawable(context, R.drawable.video_pause);
         if (retryVideoDrawable == null)
             retryVideoDrawable = ContextCompat.getDrawable(context, R.drawable.video_retry);
-        //if (nextVideoDrawable == null)
-        //    nextVideoDrawable = ContextCompat.getDrawable(context, R.drawable.video_next);
-        //if (previousVideoDrawable == null)
-        //    previousVideoDrawable = ContextCompat.getDrawable(context, R.drawable.video_previous);
-
+        if (nextVideoDrawable == null)
+            nextVideoDrawable = ContextCompat.getDrawable(context, R.drawable.video_next);
+        if (previousVideoDrawable == null)
+            previousVideoDrawable = ContextCompat.getDrawable(context, R.drawable.video_previous);
         if (enterFullScreenDrawable == null)
             enterFullScreenDrawable = ContextCompat.getDrawable(context, R.drawable.video_screen_fullscreen_enter);
         if (exitFullScreenDrawable == null)
@@ -360,6 +359,8 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
         videoSource = uri;
         setUpVideoPlayer();
     }
+
+
 
     private void setUpVideoPlayer() {
         if (videoPlayer == null || videoSource == null) return;
@@ -619,11 +620,6 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
         return false;
     }
 
-    public void init(Activity act) {
-        this.baseAct = act;
-    }
-
-
     public void setOnFullScreenClickListener(@NonNull FullScreenClickListener listener) {
         this.fullscreenToggleClickListener = listener;
     }
@@ -660,5 +656,37 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
 
     public void setOnVideoPausedListener(VideoStateListeners.OnVideoPausedListener onVideoPaused) {
         this.onVideoPaused = onVideoPaused;
+    }
+
+    public void setPlayButtonDrawable(int drawable) {
+        this.playVideoDrawable = ContextCompat.getDrawable(getContext(), drawable);
+    }
+
+    public void setPauseButtonDrawable(int drawable) {
+        this.pauseVideoDrawable = ContextCompat.getDrawable(getContext(), drawable);
+    }
+
+    public void setRetryButtonDrawable(int drawable) {
+        this.retryVideoDrawable = ContextCompat.getDrawable(getContext(), drawable);
+    }
+
+    public void setPreviousButtonDrawable(int drawable) {
+        this.previousVideoDrawable = ContextCompat.getDrawable(getContext(), drawable);
+    }
+
+    public void setNextButtonDrawable(int drawable) {
+        this.nextVideoDrawable = ContextCompat.getDrawable(getContext(), drawable);
+    }
+
+    public void setFullscreenEnterDrawable(int drawable) {
+        this.enterFullScreenDrawable = ContextCompat.getDrawable(getContext(), drawable);
+    }
+
+    public void setFullscreenExitDrawable(int drawable) {
+        this.exitFullScreenDrawable = ContextCompat.getDrawable(getContext(), drawable);
+    }
+
+    public void setSetFullScreenButtonEnabled(boolean enabled) {
+        this.setFullScreenButtonEnabled = enabled;
     }
 }

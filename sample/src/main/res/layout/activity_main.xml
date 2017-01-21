@@ -58,16 +58,28 @@
                 android:text="Fullscreen?" />
 
             <CheckBox
-                android:id="@+id/controls"
+                android:id="@+id/fullscreenButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Custom controls?" />
+                android:text="Fullscreen button?" />
 
             <CheckBox
                 android:id="@+id/noLogging"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Disable logging?" />
+
+            <CheckBox
+                android:id="@+id/customIcons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom button icons?" />
+
+            <CheckBox
+                android:id="@+id/controls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom control bar?" />
 
         </LinearLayout>
     </ScrollView>

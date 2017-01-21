@@ -20,10 +20,12 @@ public class MainActivity extends AppCompatActivity {
                 .addFlags(Intent.FLAG_ACTIVITY_REORDER_TO_FRONT)
                 .putExtra("autoplay", ((CheckBox)findViewById(R.id.autoplay)).isChecked())
                 .putExtra("autoloop", ((CheckBox)findViewById(R.id.autoloop)).isChecked())
-                .putExtra("nologging", ((CheckBox)findViewById(R.id.noLogging)).isChecked())
+                .putExtra("noLogging", ((CheckBox)findViewById(R.id.noLogging)).isChecked())
                 .putExtra("fullscreen", ((CheckBox)findViewById(R.id.fullscreen)).isChecked())
+                .putExtra("customIcons", ((CheckBox)findViewById(R.id.customIcons)).isChecked())
                 .putExtra("controls", ((CheckBox)findViewById(R.id.controls)).isChecked())
                 .putExtra("remote", ((CheckBox)findViewById(R.id.remote)).isChecked())
+                .putExtra("fullscreenButton", ((CheckBox)findViewById(R.id.fullscreenButton)).isChecked())
         );
     }
 
