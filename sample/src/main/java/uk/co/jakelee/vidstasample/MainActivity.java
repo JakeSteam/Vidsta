@@ -16,6 +16,7 @@ import com.pavelsikun.vintagechroma.colormode.ColorMode;
 
 public class MainActivity extends AppCompatActivity {
     private int tintColour = Color.WHITE;
+    private int textColour = Color.WHITE;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,12 +35,15 @@ public class MainActivity extends AppCompatActivity {
                 .putExtra("fullscreenButton", ((CheckBox)findViewById(R.id.fullscreenButton)).isChecked())
                 .putExtra("customIcons", ((CheckBox)findViewById(R.id.customIcons)).isChecked())
                 .putExtra("controls", ((CheckBox)findViewById(R.id.controls)).isChecked())
+                .putExtra("textColourEnabled", ((CheckBox)findViewById(R.id.textColour)).isChecked())
+                .putExtra("textColour", textColour)
+                .putExtra("iconTintEnabled", ((CheckBox)findViewById(R.id.iconTint)).isChecked())
                 .putExtra("iconTint", tintColour)
                 .putExtra("remote", ((CheckBox)findViewById(R.id.remote)).isChecked())
         );
     }
 
-    public void launchColourPicker(View v) {
+    public void launchTintColourPicker(View v) {
         new ChromaDialog.Builder()
                 .initialColor(Color.GREEN)
                 .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
@@ -49,6 +53,22 @@ public class MainActivity extends AppCompatActivity {
                     public void onColorSelected(@ColorInt int color) {
                         tintColour = color;
                         findViewById(R.id.iconTint).setBackgroundColor(color);
+                    }
+                })
+                .create()
+                .show(getSupportFragmentManager(), "ChromaDialog");
+    }
+
+    public void launchTextColourPicker(View v) {
+        new ChromaDialog.Builder()
+                .initialColor(Color.GREEN)
+                .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
+                .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
+                .onColorSelected(new OnColorSelectedListener() {
+                    @Override
+                    public void onColorSelected(@ColorInt int color) {
+                        textColour = color;
+                        findViewById(R.id.textColour).setBackgroundColor(color);
                     }
                 })
                 .create()

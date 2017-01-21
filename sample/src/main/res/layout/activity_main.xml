@@ -86,7 +86,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Custom icon colour tint?"
-                android:onClick="launchColourPicker"/>
+                android:onClick="launchTintColourPicker"/>
+
+            <CheckBox
+                android:id="@+id/textColour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom text colour?"
+                android:onClick="launchTextColourPicker"/>
 
             <CheckBox
                 android:id="@+id/controls"

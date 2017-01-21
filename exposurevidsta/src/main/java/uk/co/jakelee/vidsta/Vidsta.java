@@ -100,6 +100,7 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
     private Activity baseAct;
     private Handler handler = new Handler();
     private int buttonTintColor = 0;
+    private int textColor = 0;
     private boolean autoLoop;
     private boolean isPrepared = false;
 
@@ -698,5 +699,11 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
         previousVideoDrawable.setColorFilter(dr.getColor(), PorterDuff.Mode.MULTIPLY);
         nextVideoDrawable.setColorFilter(dr.getColor(), PorterDuff.Mode.MULTIPLY);
         imgBtnPlayPause.setImageDrawable(playVideoDrawable);
+    }
+
+    public void setTextColor(int color) {
+        textColor = color;
+        tvPosition.setTextColor(color);
+        tvDuration.setTextColor(color);
     }
 }

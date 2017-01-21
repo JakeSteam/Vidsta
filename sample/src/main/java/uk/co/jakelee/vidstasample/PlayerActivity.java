@@ -44,7 +44,11 @@ public class PlayerActivity extends AppCompatActivity {
             player.setOnFullScreenClickListener(listeners.fullScreenListener);
         }
 
-        if (intent.getIntExtra("iconTint", Color.WHITE) != Color.WHITE) {
+        if (intent.getBooleanExtra("textColourEnabled", false)) {
+            player.setTextColor(intent.getIntExtra("textColour", Color.WHITE));
+        }
+
+        if (intent.getBooleanExtra("iconTintEnabled", false)) {
             player.setButtonTintColor(intent.getIntExtra("iconTint", Color.WHITE));
         }
 
