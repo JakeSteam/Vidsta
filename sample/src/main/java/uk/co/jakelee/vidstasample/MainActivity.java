@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.CheckBox;
@@ -44,35 +45,43 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void launchTintColourPicker(View v) {
-        new ChromaDialog.Builder()
-                .initialColor(Color.GREEN)
-                .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
-                .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
-                .onColorSelected(new OnColorSelectedListener() {
-                    @Override
-                    public void onColorSelected(@ColorInt int color) {
-                        tintColour = color;
-                        findViewById(R.id.iconTint).setBackgroundColor(color);
-                    }
-                })
-                .create()
-                .show(getSupportFragmentManager(), "ChromaDialog");
+        if (((CheckBox)v).isChecked()) {
+            new ChromaDialog.Builder()
+                    .initialColor(Color.GREEN)
+                    .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
+                    .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
+                    .onColorSelected(new OnColorSelectedListener() {
+                        @Override
+                        public void onColorSelected(@ColorInt int color) {
+                            tintColour = color;
+                            findViewById(R.id.iconTint).setBackgroundColor(color);
+                        }
+                    })
+                    .create()
+                    .show(getSupportFragmentManager(), "ChromaDialog");
+        } else {
+            findViewById(R.id.iconTint).setBackgroundColor(ContextCompat.getColor(this, android.R.color.transparent));
+        }
     }
 
     public void launchTextColourPicker(View v) {
-        new ChromaDialog.Builder()
-                .initialColor(Color.GREEN)
-                .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
-                .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
-                .onColorSelected(new OnColorSelectedListener() {
-                    @Override
-                    public void onColorSelected(@ColorInt int color) {
-                        textColour = color;
-                        findViewById(R.id.textColour).setBackgroundColor(color);
-                    }
-                })
-                .create()
-                .show(getSupportFragmentManager(), "ChromaDialog");
+        if (((CheckBox)v).isChecked()) {
+            new ChromaDialog.Builder()
+                    .initialColor(Color.GREEN)
+                    .colorMode(ColorMode.ARGB) // RGB, ARGB, HVS, CMYK, CMYK255, HSL
+                    .indicatorMode(IndicatorMode.HEX) //HEX or DECIMAL; Note that (HSV || HSL || CMYK) && IndicatorMode.HEX is a bad idea
+                    .onColorSelected(new OnColorSelectedListener() {
+                        @Override
+                        public void onColorSelected(@ColorInt int color) {
+                            textColour = color;
+                            findViewById(R.id.textColour).setBackgroundColor(color);
+                        }
+                    })
+                    .create()
+                    .show(getSupportFragmentManager(), "ChromaDialog");
+        } else {
+            findViewById(R.id.textColour).setBackgroundColor(ContextCompat.getColor(this, android.R.color.transparent));
+        }
     }
 
 }
