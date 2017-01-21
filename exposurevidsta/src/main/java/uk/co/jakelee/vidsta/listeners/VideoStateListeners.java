@@ -1,8 +1,6 @@
-package uk.co.jakelee.vidsta;
+package uk.co.jakelee.vidsta.listeners;
 
-/**
- * Created by Chris on 13-Sep-16.
- */
+import uk.co.jakelee.vidsta.Vidsta;
 
 public class VideoStateListeners {
 
@@ -27,10 +25,10 @@ public class VideoStateListeners {
     }
 
     public interface OnVideoErrorListener {
-        void OnVideoError(int i, int ii);
+        void OnVideoError(int what, int extra);
     }
 
     public interface OnVideoRestartListener {
-        void OnVideoRestart(Vidsta player);
+        void OnVideoRestart(Vidsta evp);
     }
 }

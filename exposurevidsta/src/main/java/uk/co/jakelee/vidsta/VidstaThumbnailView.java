@@ -24,6 +24,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.HashMap;
 
+import uk.co.jakelee.vidsta.listeners.OnThumbnailClickListener;
+
 /**
  * Created by Chris on 17-Sep-16.
  */

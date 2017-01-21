@@ -12,17 +12,17 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
         <activity
-            android:name="uk.co.jakelee.exposurevideoplayersample.MainActivity"
+            android:name=".MainActivity"
             android:configChanges="orientation|keyboardHidden|screenLayout|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
+        <activity android:name=".ThumbnailActivity" />
+        <activity android:name=".PlayerActivity"></activity>
     </application>
 
 </manifest>

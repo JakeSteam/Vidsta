@@ -1,4 +1,6 @@
-package uk.co.jakelee.vidsta;
+package uk.co.jakelee.vidsta.listeners;
+
+import uk.co.jakelee.vidsta.Vidsta;
 
 /**
  * Created by Chris on 13-Sep-16.

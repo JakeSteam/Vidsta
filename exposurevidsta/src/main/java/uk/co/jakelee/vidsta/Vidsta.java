@@ -41,6 +41,11 @@ import com.rey.material.widget.ProgressView;
 
 import java.io.IOException;
 
+import uk.co.jakelee.vidsta.listeners.FullScreenClickListener;
+import uk.co.jakelee.vidsta.listeners.LayoutStates;
+import uk.co.jakelee.vidsta.listeners.OnBackCalledListener;
+import uk.co.jakelee.vidsta.listeners.VideoStateListeners;
+
 /**
  * Created by Chris on 11-Sep-16.
  */
@@ -617,19 +622,16 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
     }
 
     @Override
-    public boolean onError(MediaPlayer mediaPlayer, int i, int ii) {
-        if (i == -38) return false;
-        if (onVideoError != null) onVideoError.OnVideoError(i, ii);
+    public boolean onError(MediaPlayer mediaPlayer, int what, int extra) {
+        int stateException = -38;
+        if (what == stateException) return false;
+        if (onVideoError != null) onVideoError.OnVideoError(what, extra);
         return false;
     }
 
     public void init(Activity act) {
         this.baseAct = act;
     }
-
-//    public void init(Context ctx) {
-//        this.ctx = ctx;
-//    }
 
 
     public void setOnFullScreenClickListener(@NonNull FullScreenClickListener listener) {

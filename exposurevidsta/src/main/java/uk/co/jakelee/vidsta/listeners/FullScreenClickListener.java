@@ -1,4 +1,4 @@
-package uk.co.jakelee.vidsta;
+package uk.co.jakelee.vidsta.listeners;
 
 /**
  * Created by Chris on 15-Sep-16.

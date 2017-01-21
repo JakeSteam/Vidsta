@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_player"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="uk.co.jakelee.exposurevideoplayersample.PlayerActivity">
+
+    <uk.co.jakelee.vidsta.Vidsta
+        android:id="@+id/player"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:setFullScreen="true"
+        app:textColor="@color/colorPrimaryText"
+        app:autoLoop="true"
+        app:autoPlay="true"
+        app:buttonTintColor="@color/colorAccent"
+        app:fullScreenButtonEnabled="true"
+        app:hideControlsOnPlay="true"
+        app:nextVideoDrawable="@drawable/video_next"
+        app:pauseVideoDrawable="@drawable/video_pause"
+        app:playVideoDrawable="@drawable/video_play"
+        app:previousVideoDrawable="@drawable/video_previous"
+        app:retryVideoDrawable="@drawable/video_retry" />
+
+    <ScrollView
+        android:id="@+id/listenerScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <LinearLayout
+            android:id="@+id/listenerMessages"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+</RelativeLayout>
