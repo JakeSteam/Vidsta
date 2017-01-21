@@ -2,10 +2,6 @@ package uk.co.jakelee.vidsta.listeners;
 
 import uk.co.jakelee.vidsta.Vidsta;
 
-/**
- * Created by Chris on 13-Sep-16.
- */
-
 public interface VideoListeners {
 
     void OnVideoStarted(Vidsta evp);

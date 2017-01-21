@@ -1,9 +1,5 @@
 package uk.co.jakelee.vidsta.listeners;
 
-/**
- * Created by Chris on 14-Sep-16.
- */
-
 public class LayoutStates {
 
     public interface OnLayoutCreated {

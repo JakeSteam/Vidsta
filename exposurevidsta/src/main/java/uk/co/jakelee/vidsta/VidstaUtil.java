@@ -3,9 +3,6 @@ package uk.co.jakelee.vidsta;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
-/**
- * Created by Chris on 11-Sep-16.
- */
 public class VidstaUtil {
     public static String getTimeString(long durationMs, boolean setValueNegative) {
         return String.format(Locale.getDefault(), "%s%02d:%02d",

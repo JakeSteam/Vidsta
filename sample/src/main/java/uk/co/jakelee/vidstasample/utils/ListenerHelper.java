@@ -1,4 +1,4 @@
-package uk.co.jakelee.exposurevideoplayersample.utils;
+package uk.co.jakelee.vidstasample.utils;
 
 import android.graphics.Color;
 import android.widget.LinearLayout;
@@ -7,11 +7,12 @@ import android.widget.TextView;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 
-public class ListenerHelper {
-    public static void createListenerLog(LinearLayout messagesContainer, String text) {
-        String currentDateTime = new SimpleDateFormat("HH:mm:ss.SSS").format(new Date());
+class ListenerHelper {
+    static void createListenerLog(LinearLayout messagesContainer, String text) {
+        String currentDateTime = new SimpleDateFormat("HH:mm:ss.SSS", Locale.getDefault()).format(new Date());
         TextView textView = new TextView(messagesContainer.getContext());
         textView.setTextColor(Color.WHITE);
         textView.setTextSize(14);

@@ -1,4 +1,4 @@
-package uk.co.jakelee.exposurevideoplayersample;
+package uk.co.jakelee.vidstasample;
 
 import android.content.Intent;
 import android.os.Bundle;

@@ -1,15 +1,14 @@
-package uk.co.jakelee.exposurevideoplayersample;
+package uk.co.jakelee.vidstasample;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.LinearLayout;
 
-import uk.co.jakelee.exposurevideoplayersample.utils.Listeners;
+import uk.co.jakelee.vidstasample.utils.Listeners;
 import uk.co.jakelee.vidsta.Vidsta;
 
 public class PlayerActivity extends AppCompatActivity {
-    private Vidsta player;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +16,7 @@ public class PlayerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player);
 
         Intent intent = getIntent();
-        player = (Vidsta) findViewById(R.id.player);
+        Vidsta player = (Vidsta) findViewById(R.id.player);
         player.setVideoSource(intent.getBooleanExtra("remote", false) ?
                 "http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" :
                 "android.resource://" + getPackageName() + "/" + R.raw.big_buck_bunny);

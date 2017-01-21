@@ -427,13 +427,14 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
     }
 
     public void toggleControls() {
-        if (videoPlayer == null) return;
-        else if (controlsShowing()) {
-            animateControls(controlPlayPause, 1f, 0f, INVISIBLE);
-            animateControls(controlSeekBar, 1f, 0f, INVISIBLE);
-        } else {
-            animateControls(controlPlayPause, 0f, 1f, VISIBLE);
-            animateControls(controlSeekBar, 0f, 1f, VISIBLE);
+        if (videoPlayer != null) {
+            if (controlsShowing()) {
+                animateControls(controlPlayPause, 1f, 0f, INVISIBLE);
+                animateControls(controlSeekBar, 1f, 0f, INVISIBLE);
+            } else {
+                animateControls(controlPlayPause, 0f, 1f, VISIBLE);
+                animateControls(controlSeekBar, 0f, 1f, VISIBLE);
+            }
         }
     }
 
@@ -493,13 +494,6 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
             RelativeLayout.LayoutParams lp = (RelativeLayout.LayoutParams) tvDuration.getLayoutParams();
             lp.addRule(RelativeLayout.ALIGN_PARENT_RIGHT);
         }
-    }
-
-
-    @Override
-    public void onWindowSystemUiVisibilityChanged(int visible) {
-        super.onWindowSystemUiVisibilityChanged(visible);
-
     }
 
     public boolean isFullScreen() {

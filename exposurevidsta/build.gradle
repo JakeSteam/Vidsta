@@ -3,9 +3,9 @@ apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 25
-    buildToolsVersion "25.0.0"
+    buildToolsVersion "25.0.1"
     defaultConfig {
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 25
         versionCode 1
         versionName "1.0.0"
@@ -24,8 +24,8 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
-    compile 'com.android.support:appcompat-v7:25.0.0'
-    compile 'com.android.support:support-v4:25.0.0'
+    compile "com.android.support:appcompat-v7:25.1.0"
+    compile "com.android.support:support-v4:25.1.0"
     compile 'com.github.rey5137:material:1.2.4'
     testCompile 'junit:junit:4.12'
 }
@@ -40,5 +40,5 @@ publish {
     desc = 'A complete all-in-one video player for Android.'
     licences = ['GPL-3.0']
     uploadName = 'ExposureVidsta'
-    website = 'https://github.com/UrbanChrisy/Exposure-Vidsta'
+    website = 'https://github.com/JakeSteam/Vidsta'
 }

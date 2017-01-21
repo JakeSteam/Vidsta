@@ -5,12 +5,12 @@
     android:id="@+id/activity_player"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="uk.co.jakelee.exposurevideoplayersample.PlayerActivity">
+    tools:context="uk.co.jakelee.vidstasample.PlayerActivity">
 
     <uk.co.jakelee.vidsta.Vidsta
         android:id="@+id/player"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
     <ScrollView
         android:id="@+id/listenerScrollView"
