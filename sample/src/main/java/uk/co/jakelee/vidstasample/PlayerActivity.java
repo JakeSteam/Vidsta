@@ -3,10 +3,13 @@ package uk.co.jakelee.vidstasample;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.LinearLayout;
 
-import uk.co.jakelee.vidstasample.utils.Listeners;
 import uk.co.jakelee.vidsta.Vidsta;
+import uk.co.jakelee.vidstasample.utils.Listeners;
+
+import static android.view.View.GONE;
 
 public class PlayerActivity extends AppCompatActivity {
 
@@ -16,16 +19,20 @@ public class PlayerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_player);
 
         Intent intent = getIntent();
-        Vidsta player = (Vidsta) findViewById(R.id.player);
+
+        boolean useSmallPlayer = intent.getBooleanExtra("smallPlayer", false);
+        Vidsta player = (Vidsta) findViewById(useSmallPlayer ? R.id.playerSmall : R.id.player);
+        findViewById(R.id.playerSmall).setVisibility(useSmallPlayer ? View.VISIBLE : GONE);
+        findViewById(R.id.player).setVisibility(useSmallPlayer ? GONE : View.VISIBLE);
+
         player.setVideoSource(intent.getBooleanExtra("remote", false) ?
                 "http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" :
                 "android.resource://" + getPackageName() + "/" + R.raw.big_buck_bunny);
         player.setFullScreen(intent.getBooleanExtra("fullscreen", false));
-        player.setSetFullScreenButtonEnabled(intent.getBooleanExtra("fullscreenButton", false));
+        player.setFullScreenButtonVisible(intent.getBooleanExtra("fullscreenButton", false));
 
         if (!intent.getBooleanExtra("noLogging", false)) {
             Listeners listeners = new Listeners((LinearLayout)findViewById(R.id.listenerMessages));
-
             player.setOnVideoBufferingListener(listeners.bufferingListener);
             player.setOnVideoErrorListener(listeners.errorListener);
             player.setOnVideoFinishedListener(listeners.finishedListener);
@@ -33,7 +40,6 @@ public class PlayerActivity extends AppCompatActivity {
             player.setOnVideoRestartListener(listeners.restartListener);
             player.setOnVideoStartedListener(listeners.startedListener);
             player.setOnVideoStoppedListener(listeners.stoppedListener);
-
             player.setOnFullScreenClickListener(listeners.fullScreenListener);
         }
 

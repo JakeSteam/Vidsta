@@ -95,12 +95,11 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
     private int videoDuration;
     private boolean isFullScreen = false;
     private boolean isSetFullScreen;
+    private boolean fullscreenButtonVisible = true;
 
-    private Handler handler = new Handler();
-    private Configuration layoutConfig;
-    private int buttonTintColor = 0;
     private Activity baseAct;
-    private boolean setFullScreenButtonEnabled;
+    private Handler handler = new Handler();
+    private int buttonTintColor = 0;
     private boolean autoLoop;
     private boolean isPrepared = false;
 
@@ -129,7 +128,6 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
                 String s = customAttr.getString(R.styleable.Vidsta_videoSource);
                 if (s != null && !s.trim().isEmpty()) videoSource = Uri.parse(s);
                 autoPlay = customAttr.getBoolean(R.styleable.Vidsta_autoPlay, false);
-                setFullScreenButtonEnabled = customAttr.getBoolean(R.styleable.Vidsta_fullScreenButtonEnabled, true);
                 isSetFullScreen = customAttr.getBoolean(R.styleable.Vidsta_setFullScreen, false);
                 isFullScreen = isSetFullScreen;
                 autoLoop = customAttr.getBoolean(R.styleable.Vidsta_autoLoop, false);
@@ -147,7 +145,6 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
             autoLoop = false;
             autoPlay = false;
             isSetFullScreen = false;
-            setFullScreenButtonEnabled = true;
             buttonTintColor = ContextCompat.getColor(getContext(), R.color.colorPrimaryText);
         }
 
@@ -686,7 +683,8 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
         this.exitFullScreenDrawable = ContextCompat.getDrawable(getContext(), drawable);
     }
 
-    public void setSetFullScreenButtonEnabled(boolean enabled) {
-        this.setFullScreenButtonEnabled = enabled;
+    public void setFullScreenButtonVisible(boolean visible) {
+        this.fullscreenButtonVisible = visible;
+        findViewById(R.id.imageButtonFullScreenToggle).setVisibility(fullscreenButtonVisible ? VISIBLE : INVISIBLE);
     }
 }
