@@ -687,4 +687,16 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
         this.fullscreenButtonVisible = visible;
         findViewById(R.id.imageButtonFullScreenToggle).setVisibility(fullscreenButtonVisible ? VISIBLE : INVISIBLE);
     }
+
+    public void setButtonTintColor(int color) {
+        buttonTintColor = color;
+        ColorDrawable dr = new ColorDrawable(buttonTintColor);
+        playVideoDrawable.setColorFilter(dr.getColor(), PorterDuff.Mode.MULTIPLY);
+        pauseVideoDrawable.setColorFilter(dr.getColor(), PorterDuff.Mode.MULTIPLY);
+        enterFullScreenDrawable.setColorFilter(dr.getColor(), PorterDuff.Mode.MULTIPLY);
+        exitFullScreenDrawable.setColorFilter(dr.getColor(), PorterDuff.Mode.MULTIPLY);
+        previousVideoDrawable.setColorFilter(dr.getColor(), PorterDuff.Mode.MULTIPLY);
+        nextVideoDrawable.setColorFilter(dr.getColor(), PorterDuff.Mode.MULTIPLY);
+        imgBtnPlayPause.setImageDrawable(playVideoDrawable);
+    }
 }

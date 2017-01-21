@@ -82,6 +82,13 @@
                 android:text="Custom button icons?" />
 
             <CheckBox
+                android:id="@+id/iconTint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom icon colour tint?"
+                android:onClick="launchColourPicker"/>
+
+            <CheckBox
                 android:id="@+id/controls"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

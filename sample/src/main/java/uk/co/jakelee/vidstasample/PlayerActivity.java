@@ -1,6 +1,7 @@
 package uk.co.jakelee.vidstasample;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -41,6 +42,10 @@ public class PlayerActivity extends AppCompatActivity {
             player.setOnVideoStartedListener(listeners.startedListener);
             player.setOnVideoStoppedListener(listeners.stoppedListener);
             player.setOnFullScreenClickListener(listeners.fullScreenListener);
+        }
+
+        if (intent.getIntExtra("iconTint", Color.WHITE) != Color.WHITE) {
+            player.setButtonTintColor(intent.getIntExtra("iconTint", Color.WHITE));
         }
 
         if (intent.getBooleanExtra("customIcons", false)) {
