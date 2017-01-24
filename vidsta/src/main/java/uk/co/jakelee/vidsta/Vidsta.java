@@ -132,6 +132,7 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
                 isSetFullScreen = customAttr.getBoolean(R.styleable.Vidsta_setFullScreen, false);
                 isFullScreen = isSetFullScreen;
                 autoLoop = customAttr.getBoolean(R.styleable.Vidsta_autoLoop, false);
+                fullscreenButtonVisible = customAttr.getBoolean(R.styleable.Vidsta_fullScreenButtonVisible, true);
 
                 buttonTintColor = customAttr.getColor(R.styleable.Vidsta_buttonTintColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
                 playVideoDrawable = customAttr.getDrawable(R.styleable.Vidsta_playVideoDrawable);

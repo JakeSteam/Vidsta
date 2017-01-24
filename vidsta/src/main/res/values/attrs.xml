@@ -13,14 +13,7 @@
         <attr name="autoLoop" format="boolean" />
         <attr name="setFullScreen" format="boolean" />
         <attr name="fullScreenButtonEnabled" format="boolean" />
-        <attr name="hideControlsOnPlay" format="boolean" />
-
-        <!-- <attr name="disableControls" format="boolean" />-->
-
-    </declare-styleable>
-
-    <declare-styleable name="VidstaThumbnailView">
-        <attr name="allowCache" format="boolean" />
+        <attr name="fullScreenButtonVisible" format="boolean" />
     </declare-styleable>
 
 </resources>

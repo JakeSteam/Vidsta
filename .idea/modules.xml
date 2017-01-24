@@ -3,8 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Vidsta.iml" filepath="$PROJECT_DIR$/Vidsta.iml" />
-      <module fileurl="file://$PROJECT_DIR$/exposurevidsta/exposurevidsta.iml" filepath="$PROJECT_DIR$/exposurevidsta/exposurevidsta.iml" />
-      <module fileurl="file://$PROJECT_DIR$/sample/sample.iml" filepath="$PROJECT_DIR$/sample/sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vidsta/vidsta.iml" filepath="$PROJECT_DIR$/vidsta/vidsta.iml" />
+      <module fileurl="file://$PROJECT_DIR$/vidstaexample/vidstaexample.iml" filepath="$PROJECT_DIR$/vidstaexample/vidstaexample.iml" />
     </modules>
   </component>
 </project>

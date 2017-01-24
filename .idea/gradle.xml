@@ -8,8 +8,8 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
-            <option value="$PROJECT_DIR$/exposurevidsta" />
-            <option value="$PROJECT_DIR$/sample" />
+            <option value="$PROJECT_DIR$/vidsta" />
+            <option value="$PROJECT_DIR$/vidstaexample" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
