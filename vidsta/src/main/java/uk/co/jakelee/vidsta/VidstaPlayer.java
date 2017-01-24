@@ -47,7 +47,7 @@ import uk.co.jakelee.vidsta.listeners.LayoutStates;
 import uk.co.jakelee.vidsta.listeners.OnBackCalledListener;
 import uk.co.jakelee.vidsta.listeners.VideoStateListeners;
 
-public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureListener, MediaPlayer.OnPreparedListener,
+public class VidstaPlayer extends FrameLayout implements TextureView.SurfaceTextureListener, MediaPlayer.OnPreparedListener,
         MediaPlayer.OnBufferingUpdateListener, MediaPlayer.OnCompletionListener, MediaPlayer.OnVideoSizeChangedListener, View.OnClickListener,
         SeekBar.OnSeekBarChangeListener, MediaPlayer.OnErrorListener {
 
@@ -108,17 +108,17 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
     private boolean isPrepared = false;
 
 
-    public Vidsta(Context context) {
+    public VidstaPlayer(Context context) {
         super(context);
         init(context, null);
     }
 
-    public Vidsta(Context context, AttributeSet attrs) {
+    public VidstaPlayer(Context context, AttributeSet attrs) {
         super(context, attrs);
         init(context, attrs);
     }
 
-    public Vidsta(Context context, AttributeSet attrs, int defStyleAttr) {
+    public VidstaPlayer(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs);
     }
@@ -127,23 +127,23 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
         this.isInEditMode();
         setBackgroundColor(Color.BLACK);
         if (attrs != null) {
-            TypedArray customAttr = context.getTheme().obtainStyledAttributes(attrs, R.styleable.Vidsta, 0, 0);
+            TypedArray customAttr = context.getTheme().obtainStyledAttributes(attrs, R.styleable.player, 0, 0);
             try {
-                String s = customAttr.getString(R.styleable.Vidsta_videoSource);
+                String s = customAttr.getString(R.styleable.player_videoSource);
                 if (s != null && !s.trim().isEmpty()) videoSource = Uri.parse(s);
-                autoPlay = customAttr.getBoolean(R.styleable.Vidsta_autoPlay, false);
-                isSetFullScreen = customAttr.getBoolean(R.styleable.Vidsta_setFullScreen, false);
+                autoPlay = customAttr.getBoolean(R.styleable.player_autoPlay, false);
+                isSetFullScreen = customAttr.getBoolean(R.styleable.player_setFullScreen, false);
                 isFullScreen = isSetFullScreen;
-                autoLoop = customAttr.getBoolean(R.styleable.Vidsta_autoLoop, false);
-                fullscreenButtonVisible = customAttr.getBoolean(R.styleable.Vidsta_fullScreenButtonVisible, true);
+                autoLoop = customAttr.getBoolean(R.styleable.player_autoLoop, false);
+                fullscreenButtonVisible = customAttr.getBoolean(R.styleable.player_fullScreenButtonVisible, true);
 
-                buttonTintColor = customAttr.getColor(R.styleable.Vidsta_buttonTintColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
-                textColor = customAttr.getColor(R.styleable.Vidsta_textColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
-                playVideoDrawable = customAttr.getDrawable(R.styleable.Vidsta_playVideoDrawable);
-                pauseVideoDrawable = customAttr.getDrawable(R.styleable.Vidsta_pauseVideoDrawable);
-                retryVideoDrawable = customAttr.getDrawable(R.styleable.Vidsta_retryVideoDrawable);
-                nextVideoDrawable = customAttr.getDrawable(R.styleable.Vidsta_nextVideoDrawable);
-                previousVideoDrawable = customAttr.getDrawable(R.styleable.Vidsta_previousVideoDrawable);
+                buttonTintColor = customAttr.getColor(R.styleable.player_buttonTintColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
+                textColor = customAttr.getColor(R.styleable.player_textColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
+                playVideoDrawable = customAttr.getDrawable(R.styleable.player_playVideoDrawable);
+                pauseVideoDrawable = customAttr.getDrawable(R.styleable.player_pauseVideoDrawable);
+                retryVideoDrawable = customAttr.getDrawable(R.styleable.player_retryVideoDrawable);
+                nextVideoDrawable = customAttr.getDrawable(R.styleable.player_nextVideoDrawable);
+                previousVideoDrawable = customAttr.getDrawable(R.styleable.player_previousVideoDrawable);
             } finally {
                 customAttr.recycle();
             }

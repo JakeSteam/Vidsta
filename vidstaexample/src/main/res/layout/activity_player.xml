@@ -7,12 +7,12 @@
     android:layout_height="match_parent"
     tools:context="uk.co.jakelee.vidstasample.PlayerActivity">
 
-    <uk.co.jakelee.vidsta.Vidsta
+    <uk.co.jakelee.vidsta.VidstaPlayer
         android:id="@+id/player"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
-    <uk.co.jakelee.vidsta.Vidsta
+    <uk.co.jakelee.vidsta.VidstaPlayer
         android:id="@+id/playerSmall"
         android:layout_width="200dp"
         android:layout_height="200dp"

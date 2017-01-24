@@ -1,22 +1,22 @@
 package uk.co.jakelee.vidsta.listeners;
 
-import uk.co.jakelee.vidsta.Vidsta;
+import uk.co.jakelee.vidsta.VidstaPlayer;
 
 public interface VideoListeners {
 
-    void OnVideoStarted(Vidsta evp);
+    void OnVideoStarted(VidstaPlayer evp);
 
-    void OnVideoPaused(Vidsta evp);
+    void OnVideoPaused(VidstaPlayer evp);
 
-    void OnVideoStopped(Vidsta evp);
+    void OnVideoStopped(VidstaPlayer evp);
 
-    void OnVideoFinished(Vidsta evp);
+    void OnVideoFinished(VidstaPlayer evp);
 
-    void OnVideoBuffering(Vidsta evp, int buffPercent);
+    void OnVideoBuffering(VidstaPlayer evp, int buffPercent);
 
     void OnVideoError(Exception err);//Todo: Add Error listener, not urgent tho.
 
-    void OnVideoRestart(Vidsta player);
+    void OnVideoRestart(VidstaPlayer VidstaPlayer);
 }
 
 

@@ -1,27 +1,27 @@
 package uk.co.jakelee.vidsta.listeners;
 
-import uk.co.jakelee.vidsta.Vidsta;
+import uk.co.jakelee.vidsta.VidstaPlayer;
 
 public class VideoStateListeners {
 
     public interface OnVideoStartedListener {
-        void OnVideoStarted(Vidsta evp);
+        void OnVideoStarted(VidstaPlayer evp);
     }
 
     public interface OnVideoPausedListener {
-        void OnVideoPaused(Vidsta evp);
+        void OnVideoPaused(VidstaPlayer evp);
     }
 
     public interface OnVideoStoppedListener {
-        void OnVideoStopped(Vidsta evp);
+        void OnVideoStopped(VidstaPlayer evp);
     }
 
     public interface OnVideoFinishedListener {
-        void OnVideoFinished(Vidsta evp);
+        void OnVideoFinished(VidstaPlayer evp);
     }
 
     public interface OnVideoBufferingListener {
-        void OnVideoBuffering(Vidsta evp, int buffPercent);
+        void OnVideoBuffering(VidstaPlayer evp, int buffPercent);
     }
 
     public interface OnVideoErrorListener {
@@ -29,6 +29,6 @@ public class VideoStateListeners {
     }
 
     public interface OnVideoRestartListener {
-        void OnVideoRestart(Vidsta evp);
+        void OnVideoRestart(VidstaPlayer evp);
     }
 }

@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.LinearLayout;
 
-import uk.co.jakelee.vidsta.Vidsta;
+import uk.co.jakelee.vidsta.VidstaPlayer;
 import uk.co.jakelee.vidstasample.utils.Listeners;
 
 import static android.view.View.GONE;
@@ -22,7 +22,7 @@ public class PlayerActivity extends AppCompatActivity {
         Intent intent = getIntent();
 
         boolean useSmallPlayer = intent.getBooleanExtra("smallPlayer", false);
-        Vidsta player = (Vidsta) findViewById(useSmallPlayer ? R.id.playerSmall : R.id.player);
+        VidstaPlayer player = (VidstaPlayer) findViewById(useSmallPlayer ? R.id.playerSmall : R.id.player);
         findViewById(R.id.playerSmall).setVisibility(useSmallPlayer ? View.VISIBLE : GONE);
         findViewById(R.id.player).setVisibility(useSmallPlayer ? GONE : View.VISIBLE);
 
