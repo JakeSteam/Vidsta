@@ -39,6 +39,8 @@ import com.rey.material.widget.LinearLayout;
 import com.rey.material.widget.ProgressView;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import uk.co.jakelee.vidsta.listeners.FullScreenClickListener;
 import uk.co.jakelee.vidsta.listeners.LayoutStates;
@@ -93,6 +95,7 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
     private Integer initialVideoWidth;
     private Integer initialVideoHeight;
     private int videoDuration;
+    private Map<String, String> headers = new HashMap<>();
     private boolean isFullScreen = false;
     private boolean isSetFullScreen;
     private boolean fullscreenButtonVisible = true;
@@ -135,6 +138,7 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
                 fullscreenButtonVisible = customAttr.getBoolean(R.styleable.Vidsta_fullScreenButtonVisible, true);
 
                 buttonTintColor = customAttr.getColor(R.styleable.Vidsta_buttonTintColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
+                textColor = customAttr.getColor(R.styleable.Vidsta_textColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
                 playVideoDrawable = customAttr.getDrawable(R.styleable.Vidsta_playVideoDrawable);
                 pauseVideoDrawable = customAttr.getDrawable(R.styleable.Vidsta_pauseVideoDrawable);
                 retryVideoDrawable = customAttr.getDrawable(R.styleable.Vidsta_retryVideoDrawable);
@@ -359,15 +363,18 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
         setUpVideoPlayer();
     }
 
-
+    public void setVideoSource(Uri uri, Map<String, String> urlHeaders) {
+        headers = urlHeaders;
+        setVideoSource(uri);
+    }
 
     private void setUpVideoPlayer() {
-        if (videoPlayer == null || videoSource == null) return;
+        if (videoPlayer == null || videoSource == null) {
+            return;
+        }
         videoPlayer.setSurface(surface);
         try {
-            if (videoSource.getScheme() != null && (videoSource.getScheme().equals("http") || videoSource.getScheme().equals("https")))
-                videoPlayer.setDataSource(videoSource.toString());
-            else videoPlayer.setDataSource(getContext(), videoSource);
+            videoPlayer.setDataSource(getContext(), videoSource, headers);
             videoPlayer.prepareAsync();
         } catch (IOException e) {
             e.printStackTrace();
@@ -380,6 +387,11 @@ public class Vidsta extends FrameLayout implements TextureView.SurfaceTextureLis
         }
 
         setAutoLoop(autoLoop);
+
+        if (textColor != ContextCompat.getColor(getContext(), R.color.colorPrimaryText)) {
+            tvPosition.setTextColor(textColor);
+            tvDuration.setTextColor(textColor);
+        }
 
         if (buttonTintColor != ContextCompat.getColor(getContext(), R.color.colorPrimaryText)) {
             ColorDrawable dr = new ColorDrawable(buttonTintColor);
