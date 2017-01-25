@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="VidstaPlayer">
+        <attr name="videoSource" format="string" />
+        <attr name="textColor" format="color" />
+        <attr name="playVideoDrawable" format="reference" />
+        <attr name="pauseVideoDrawable" format="reference" />
+        <attr name="retryVideoDrawable" format="reference" />
+        <attr name="nextVideoDrawable" format="reference" />
+        <attr name="previousVideoDrawable" format="reference" />
+        <attr name="buttonTintColor" format="color" />
+        <attr name="autoPlay" format="boolean" />
+        <attr name="autoLoop" format="boolean" />
+        <attr name="setFullScreen" format="boolean" />
+        <attr name="fullScreenButtonEnabled" format="boolean" />
+        <attr name="fullScreenButtonVisible" format="boolean" />
+    </declare-styleable>
+
+</resources>

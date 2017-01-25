@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
+        android:text="Vidsta"
+        android:textColor="@color/white"
+        android:textSize="50sp" />
+
+    <Button
+        android:id="@+id/launchPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="launchPlayer"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Start Player" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/launchPlayer"
+        android:layout_below="@id/logo">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/smallPlayer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom player size?" />
+
+            <CheckBox
+                android:id="@+id/remote"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Remote video?" />
+
+            <CheckBox
+                android:id="@+id/autoplay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Autoplay?" />
+
+            <CheckBox
+                android:id="@+id/autoloop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Autoloop?" />
+
+            <CheckBox
+                android:id="@+id/fullscreen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fullscreen?" />
+
+            <CheckBox
+                android:id="@+id/fullscreenButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fullscreen button?" />
+
+            <CheckBox
+                android:id="@+id/noLogging"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disable logging?" />
+
+            <CheckBox
+                android:id="@+id/customIcons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom button icons?" />
+
+            <CheckBox
+                android:id="@+id/iconTint"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom icon colour tint?"
+                android:onClick="launchTintColourPicker"/>
+
+            <CheckBox
+                android:id="@+id/textColour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom text colour?"
+                android:onClick="launchTextColourPicker"/>
+
+            <CheckBox
+                android:id="@+id/controls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Custom control bar?" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</RelativeLayout>
