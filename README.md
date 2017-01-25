@@ -95,5 +95,7 @@ player.setOnVideoPausedListener(new VideoStateListeners.OnVideoPausedListener())
 player.setOnVideoRestartListener(new VideoStateListeners.OnVideoRestartListener());
 player.setOnVideoStartedListener(new VideoStateListeners.OnVideoStartedListener());
 player.setOnVideoStoppedListener(new VideoStateListeners.OnVideoStoppedListener());
+
+# Setting a fullscreen listener. Note that starting a new fullscreen activity must be handled in your application for now
 player.setOnFullScreenClickListener(new FullScreenClickListener());
 ```

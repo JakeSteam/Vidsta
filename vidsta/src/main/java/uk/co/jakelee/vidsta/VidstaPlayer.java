@@ -107,7 +107,6 @@ public class VidstaPlayer extends FrameLayout implements TextureView.SurfaceText
     private boolean autoLoop;
     private boolean isPrepared = false;
 
-
     public VidstaPlayer(Context context) {
         super(context);
         init(context, null);
@@ -127,23 +126,23 @@ public class VidstaPlayer extends FrameLayout implements TextureView.SurfaceText
         this.isInEditMode();
         setBackgroundColor(Color.BLACK);
         if (attrs != null) {
-            TypedArray customAttr = context.getTheme().obtainStyledAttributes(attrs, R.styleable.player, 0, 0);
+            TypedArray customAttr = context.getTheme().obtainStyledAttributes(attrs, R.styleable.VidstaPlayer, 0, 0);
             try {
-                String s = customAttr.getString(R.styleable.player_videoSource);
+                String s = customAttr.getString(R.styleable.VidstaPlayer_videoSource);
                 if (s != null && !s.trim().isEmpty()) videoSource = Uri.parse(s);
-                autoPlay = customAttr.getBoolean(R.styleable.player_autoPlay, false);
-                isSetFullScreen = customAttr.getBoolean(R.styleable.player_setFullScreen, false);
+                autoPlay = customAttr.getBoolean(R.styleable.VidstaPlayer_autoPlay, false);
+                isSetFullScreen = customAttr.getBoolean(R.styleable.VidstaPlayer_setFullScreen, false);
                 isFullScreen = isSetFullScreen;
-                autoLoop = customAttr.getBoolean(R.styleable.player_autoLoop, false);
-                fullscreenButtonVisible = customAttr.getBoolean(R.styleable.player_fullScreenButtonVisible, true);
+                autoLoop = customAttr.getBoolean(R.styleable.VidstaPlayer_autoLoop, false);
+                fullscreenButtonVisible = customAttr.getBoolean(R.styleable.VidstaPlayer_fullScreenButtonVisible, true);
 
-                buttonTintColor = customAttr.getColor(R.styleable.player_buttonTintColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
-                textColor = customAttr.getColor(R.styleable.player_textColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
-                playVideoDrawable = customAttr.getDrawable(R.styleable.player_playVideoDrawable);
-                pauseVideoDrawable = customAttr.getDrawable(R.styleable.player_pauseVideoDrawable);
-                retryVideoDrawable = customAttr.getDrawable(R.styleable.player_retryVideoDrawable);
-                nextVideoDrawable = customAttr.getDrawable(R.styleable.player_nextVideoDrawable);
-                previousVideoDrawable = customAttr.getDrawable(R.styleable.player_previousVideoDrawable);
+                buttonTintColor = customAttr.getColor(R.styleable.VidstaPlayer_buttonTintColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
+                textColor = customAttr.getColor(R.styleable.VidstaPlayer_textColor, ContextCompat.getColor(getContext(), R.color.colorPrimaryText));
+                playVideoDrawable = customAttr.getDrawable(R.styleable.VidstaPlayer_playVideoDrawable);
+                pauseVideoDrawable = customAttr.getDrawable(R.styleable.VidstaPlayer_pauseVideoDrawable);
+                retryVideoDrawable = customAttr.getDrawable(R.styleable.VidstaPlayer_retryVideoDrawable);
+                nextVideoDrawable = customAttr.getDrawable(R.styleable.VidstaPlayer_nextVideoDrawable);
+                previousVideoDrawable = customAttr.getDrawable(R.styleable.VidstaPlayer_previousVideoDrawable);
             } finally {
                 customAttr.recycle();
             }
