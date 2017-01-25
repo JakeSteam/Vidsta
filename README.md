@@ -1,5 +1,5 @@
 # Vidsta
-#### An easily implementable and customisable Android video player
+#### An easily implementable and customisable Android video player. Try out the [sample app](https://play.google.com/store/apps/details?id=uk.co.jakelee.exposurevideoplayersample)!
 ----
 #### Feature List:
 * Plays local and remote files
@@ -11,7 +11,7 @@
 * Autoloop
 * Listeners for video play / pause / buffering / error
 * Easy to implement
-* Min SDK Version: 16
+* Min SDK Version: 14
 
 ----
 #### Setup
