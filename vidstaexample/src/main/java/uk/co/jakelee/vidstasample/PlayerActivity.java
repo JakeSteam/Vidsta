@@ -25,7 +25,7 @@ public class PlayerActivity extends AppCompatActivity {
         VidstaPlayer player = (VidstaPlayer) findViewById(useSmallPlayer ? R.id.playerSmall : R.id.player);
         findViewById(R.id.playerSmall).setVisibility(useSmallPlayer ? View.VISIBLE : GONE);
         findViewById(R.id.player).setVisibility(useSmallPlayer ? GONE : View.VISIBLE);
-        
+
         player.setVideoSource(intent.getBooleanExtra("remote", false) ?
                 "http://www.quirksmode.org/html5/videos/big_buck_bunny.mp4" :
                 "android.resource://" + getPackageName() + "/" + R.raw.big_buck_bunny);
