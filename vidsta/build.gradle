@@ -1,6 +1,5 @@
 apply plugin: 'com.android.library'
 
-
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
@@ -28,17 +27,4 @@ dependencies {
     compile "com.android.support:support-v4:25.1.0"
     compile 'com.github.rey5137:material:1.2.4'
     testCompile 'junit:junit:4.12'
-}
-
-apply plugin: 'com.novoda.bintray-release'
-
-publish {
-    userOrg= 'jakelee'
-    groupId = 'uk.co.jakelee.vidsta'
-    artifactId = 'vidsta'
-    publishVersion = '1.0.6'
-    desc = 'A complete all-in-one video player for Android.'
-    licences = ['GPL-3.0']
-    uploadName = 'ExposureVidsta'
-    website = 'https://github.com/JakeSteam/Vidsta'
 }
