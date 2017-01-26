@@ -1,3 +1,5 @@
+ [ ![Download](https://api.bintray.com/packages/jakesteam/vidsta/vidsta/images/download.svg) ](https://bintray.com/jakesteam/vidsta/vidsta/_latestVersion)
+
 # Vidsta
 #### An easily implementable and customisable Android video player. Try out the [sample app](https://play.google.com/store/apps/details?id=uk.co.jakelee.exposurevideoplayersample)!
 ----
