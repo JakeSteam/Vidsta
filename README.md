@@ -1,3 +1,5 @@
+ [ ![Download](https://api.bintray.com/packages/jakesteam/vidsta/vidsta/images/download.svg) ](https://bintray.com/jakesteam/vidsta/vidsta/_latestVersion)
+
 # Vidsta
 #### An easily implementable and customisable Android video player. Try out the [sample app](https://play.google.com/store/apps/details?id=uk.co.jakelee.exposurevideoplayersample)!
 ----
@@ -16,7 +18,7 @@
 ----
 #### Setup
 ##### 1. Import library:
-Add `compile 'uk.co.jakelee.vidsta:1.0.0'` to your `build.gradle` dependencies.
+Add `compile 'uk.co.jakelee:vidsta:1.0.0'` to your `build.gradle` dependencies.
 
 ##### 2. Create view to display video in:
 ```java    
