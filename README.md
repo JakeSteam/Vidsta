@@ -18,7 +18,7 @@
 ----
 #### Setup
 ##### 1. Import library:
-Add `compile 'uk.co.jakelee.vidsta:1.0.0'` to your `build.gradle` dependencies.
+Add `compile 'uk.co.jakelee:vidsta:1.0.0'` to your `build.gradle` dependencies.
 
 ##### 2. Create view to display video in:
 ```java    
