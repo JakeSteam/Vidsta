@@ -373,6 +373,7 @@ public class VidstaPlayer extends FrameLayout implements TextureView.SurfaceText
         }
         videoPlayer.setSurface(surface);
         try {
+            videoPlayer.reset();
             videoPlayer.setDataSource(getContext(), videoSource, headers);
             videoPlayer.prepareAsync();
         } catch (IOException e) {
